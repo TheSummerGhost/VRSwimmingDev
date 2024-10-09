@@ -1,0 +1,54 @@
+{
+    "name": "MyVRInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "e3860e9f-8138-4e2f-a00c-a25f682ce068",
+            "actions": [
+                {
+                    "name": "RightHandTriggerButton",
+                    "type": "Button",
+                    "id": "0c5790e1-ecd3-43c7-87f5-6649b6384b9a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftHandTriggerButton",
+                    "type": "Button",
+                    "id": "745c89eb-8c7b-4c29-b950-be58d780cb8d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5bb535a4-cbb0-4daa-80ef-f864bf8e1fe6",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandTriggerButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31fc8680-52de-4c6b-956a-273aa986cb02",
+                    "path": "<XRController>{LeftHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandTriggerButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
