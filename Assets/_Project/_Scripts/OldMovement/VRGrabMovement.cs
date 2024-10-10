@@ -1,5 +1,7 @@
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Debug = System.Diagnostics.Debug;
 
 public class VRGrabMovement : MonoBehaviour
 {
@@ -24,6 +26,10 @@ public class VRGrabMovement : MonoBehaviour
 
     private float grabAccellLerp = 0f;
     
+    [SerializeField] private ParticleSystem seaMovementParticles;
+    
+    
+    
     void Start()
     {
         rigRigidbody = rigTransform.GetComponent<Rigidbody>();
@@ -36,8 +42,12 @@ public class VRGrabMovement : MonoBehaviour
     
     void HandleGrabMovement()
     {
+        var module = seaMovementParticles.emission;
         if (grabAction.action.ReadValue<float>() == 1f)
         {
+
+            module.rateOverTime = 0;
+            
             if (!isGrabbing) 
             {
                 
@@ -84,6 +94,7 @@ public class VRGrabMovement : MonoBehaviour
             rigRigidbody.isKinematic = false;
             rigRigidbody.AddForce(reversedHandVelocity * rigRigidbody.mass, ForceMode.VelocityChange);
 
+            module.rateOverTime = 100;
             isGrabbing = false;
         }
     }
